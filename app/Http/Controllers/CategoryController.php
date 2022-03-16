@@ -65,7 +65,6 @@ class CategoryController extends Controller
         $categoria->condicion = '1';
         $categoria->save();
     }
-
     
     /**
      * Update the specified resource in storage.

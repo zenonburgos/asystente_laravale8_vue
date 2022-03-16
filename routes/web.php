@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::post('/articulo/registrar', [ArticuloController::class, 'store']);
 Route::put('/articulo/actualizar', [ArticuloController::class, 'update']);
 Route::put('/articulo/desactivar', [ArticuloController::class, 'desactivar']);
 Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
+
+Route::get('/cliente', [ClienteController::class, 'index']);
+Route::post('/cliente/registrar', [ClienteController::class, 'store']);
+Route::put('/cliente/actualizar', [ClienteController::class, 'update']);
 
 
 //O también:
