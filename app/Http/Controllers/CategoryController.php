@@ -48,7 +48,6 @@ class CategoryController extends Controller
         return ['categorias' => $categorias];
     }
 
-
     /**
      * Store a newly created resource in storage.
      *

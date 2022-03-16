@@ -37,7 +37,6 @@ Route::get('/cliente', [ClienteController::class, 'index']);
 Route::post('/cliente/registrar', [ClienteController::class, 'store']);
 Route::put('/cliente/actualizar', [ClienteController::class, 'update']);
 
-
 //O también:
 //Route::get('/category', 'App\Http\Controllers\CategoryController@index');
 //Es para versiones anteriores pero funciona

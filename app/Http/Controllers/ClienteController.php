@@ -38,7 +38,6 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
-        
         $persona = new Persona();
         $persona->nombre = $request->nombre;
         $persona->tipo_documento = $request->tipo_documento;
@@ -47,7 +46,7 @@ class ClienteController extends Controller
         $persona->telefono = $request->telefono;
         $persona->email = $request->email;
 
-        $personas->save();
+        $persona->save();
     }
 
     public function update(Request $request)
