@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\RolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,13 @@ Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
 Route::get('/cliente', [ClienteController::class, 'index']);
 Route::post('/cliente/registrar', [ClienteController::class, 'store']);
 Route::put('/cliente/actualizar', [ClienteController::class, 'update']);
+
+Route::get('/proveedor', [ProveedorController::class, 'index']);
+Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
+Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
+
+Route::get('/rol', [RolController::class, 'index']);
+
 
 //O también:
 //Route::get('/category', 'App\Http\Controllers\CategoryController@index');

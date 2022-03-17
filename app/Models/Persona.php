@@ -10,4 +10,9 @@ class Persona extends Model
     protected $guarded =[
         'id', 'created_at', 'updated_at', 'nombre'
     ];
+
+    public function proveedor()
+    {
+        return $this->hasOne(Proveedor::class);
+    }
 }
