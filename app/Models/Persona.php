@@ -15,4 +15,10 @@ class Persona extends Model
     {
         return $this->hasOne(Proveedor::class);
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
 }

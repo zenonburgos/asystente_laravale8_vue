@@ -10,4 +10,10 @@ class Rol extends Model
     protected $table = 'roles';
     protected $fillabe = ['nombre', 'descripcion', 'condicion'];
     public $timestamps = false;
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

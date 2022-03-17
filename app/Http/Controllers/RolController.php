@@ -34,6 +34,7 @@ class RolController extends Controller
             'roles' => $roles
         ];
     }
+    
     public function selectRol(Request $request)
     {
         $roles = Rol::where('condicion', '=', '1')
@@ -41,6 +42,5 @@ class RolController extends Controller
         ->orderBy('nombre', 'asc')->get();
 
         return ['roles' => $roles];
-    } 
-
+    }
 }

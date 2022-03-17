@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,13 @@ Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
 Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
 
 Route::get('/rol', [RolController::class, 'index']);
+Route::get('/rol/selectRol', [RolController::class, 'selectRol']);
+
+Route::get('/user', [UserController::class, 'index']);
+Route::post('/user/registrar', [UserController::class, 'store']);
+Route::put('/user/actualizar', [UserController::class, 'update']);
+Route::put('/user/desactivar', [UserController::class, 'desactivar']);
+Route::put('/user/activar', [UserController::class, 'activar']);
 
 
 //O también:
