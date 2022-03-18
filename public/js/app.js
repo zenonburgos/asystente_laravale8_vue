@@ -7575,6 +7575,12 @@ Vue.component('cliente', (__webpack_require__(/*! ./components/Cliente.vue */ ".
 Vue.component('proveedor', (__webpack_require__(/*! ./components/Proveedor.vue */ "./resources/js/components/Proveedor.vue")["default"]));
 Vue.component('rol', (__webpack_require__(/*! ./components/Rol.vue */ "./resources/js/components/Rol.vue")["default"]));
 Vue.component('user', (__webpack_require__(/*! ./components/User.vue */ "./resources/js/components/User.vue")["default"]));
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
 var app = new Vue({
   el: '#app',
   data: {
