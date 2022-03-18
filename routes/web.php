@@ -8,6 +8,7 @@ use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\IngresoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,10 @@ Route::group(['middleware'=>['auth']],function(){
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
         Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
 
+        Route::get('/ingreso', [IngresoController::class, 'index']);
+        Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
+        Route::put('/ingreso/desactivar', [IngresoController::class, 'desactivar']);
+
     });
     
     Route::group(['middleware' => ['Vendedor']], function () {
@@ -80,6 +85,10 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('/proveedor', [ProveedorController::class, 'index']);
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
         Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
+
+        Route::get('/ingreso', [IngresoController::class, 'index']);
+        Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
+        Route::put('/ingreso/desactivar', [IngresoController::class, 'desactivar']);
         
         Route::get('/cliente', [ClienteController::class, 'index']);
         Route::post('/cliente/registrar', [ClienteController::class, 'store']);
