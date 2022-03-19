@@ -48,10 +48,12 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/articulo/actualizar', [ArticuloController::class, 'update']);
         Route::put('/articulo/desactivar', [ArticuloController::class, 'desactivar']);
         Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
+        Route::get('/articulo/buscarArticulo', [ArticuloController::class, 'buscarArticulo']);
 
         Route::get('/proveedor', [ProveedorController::class, 'index']);
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
         Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
+        Route::get('/proveedor/selectProveedor', [ProveedorController::class, 'selectProveedor']);
 
         Route::get('/ingreso', [IngresoController::class, 'index']);
         Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
@@ -81,10 +83,12 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/articulo/actualizar', [ArticuloController::class, 'update']);
         Route::put('/articulo/desactivar', [ArticuloController::class, 'desactivar']);
         Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
+        Route::get('/articulo/buscarArticulo', [ArticuloController::class, 'buscarArticulo']);
         
         Route::get('/proveedor', [ProveedorController::class, 'index']);
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
         Route::put('/proveedor/actualizar', [ProveedorController::class, 'update']);
+        Route::get('/proveedor/selectProveedor', [ProveedorController::class, 'selectProveedor']);
 
         Route::get('/ingreso', [IngresoController::class, 'index']);
         Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
