@@ -120,4 +120,12 @@ class IngresoController extends Controller
         $ingreso->estado = 'Anulado';
         $ingreso->save();
     }
+
+    public function activar(Request $request)
+    {
+        if (!$request->ajax()) return redirect('/');
+        $ingreso = Ingreso::findOrFail($request->id);
+        $ingreso->estado = 'Restablecido';
+        $ingreso->save();
+    }
 }

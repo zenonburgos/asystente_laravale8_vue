@@ -49,6 +49,7 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/articulo/desactivar', [ArticuloController::class, 'desactivar']);
         Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
         Route::get('/articulo/buscarArticulo', [ArticuloController::class, 'buscarArticulo']);
+        Route::get('/articulo/listarArticulo', [ArticuloController::class, 'listarArticulo']);
 
         Route::get('/proveedor', [ProveedorController::class, 'index']);
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
@@ -58,6 +59,9 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('/ingreso', [IngresoController::class, 'index']);
         Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
         Route::put('/ingreso/desactivar', [IngresoController::class, 'desactivar']);
+        Route::put('/ingreso/activar', [IngresoController::class, 'activar']);
+        Route::get('/ingreso/obtenerCabecera', [IngresoController::class, 'obtenerCabecera']);
+        Route::get('/ingreso/obtenerDetalles', [IngresoController::class, 'obtenerDetalles']);
 
     });
     
@@ -84,6 +88,7 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/articulo/desactivar', [ArticuloController::class, 'desactivar']);
         Route::put('/articulo/activar', [ArticuloController::class, 'activar']);
         Route::get('/articulo/buscarArticulo', [ArticuloController::class, 'buscarArticulo']);
+        Route::get('/articulo/listarArticulo', [ArticuloController::class, 'listarArticulo']);
         
         Route::get('/proveedor', [ProveedorController::class, 'index']);
         Route::post('/proveedor/registrar', [ProveedorController::class, 'store']);
@@ -93,6 +98,8 @@ Route::group(['middleware'=>['auth']],function(){
         Route::get('/ingreso', [IngresoController::class, 'index']);
         Route::post('/ingreso/registrar', [IngresoController::class, 'store']);
         Route::put('/ingreso/desactivar', [IngresoController::class, 'desactivar']);
+        Route::get('/ingreso/obtenerCabecera', [IngresoController::class, 'obtenerCabecera']);
+        Route::get('/ingreso/obtenerDetalles', [IngresoController::class, 'obtenerDetalles']);
         
         Route::get('/cliente', [ClienteController::class, 'index']);
         Route::post('/cliente/registrar', [ClienteController::class, 'store']);
