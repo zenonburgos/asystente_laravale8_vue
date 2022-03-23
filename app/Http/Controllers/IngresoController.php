@@ -47,6 +47,7 @@ class IngresoController extends Controller
             'ingresos' => $ingresos
         ];
     }
+
     public function obtenerCabecera(Request $request){
         if (!$request->ajax()) return redirect('/');
 
@@ -61,6 +62,7 @@ class IngresoController extends Controller
         
         return ['ingreso' => $ingreso];
     }
+    
     public function obtenerDetalles(Request $request){
         if (!$request->ajax()) return redirect('/');
 
