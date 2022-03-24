@@ -115,12 +115,12 @@
                         }]
                     },
                     options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero:true
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
                                 }
-                            }]
+                            }
                         }
                     }
                 });
@@ -147,11 +147,9 @@
                     },
                     options: {
                         scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero:true
-                                }
-                            }]
+                            y: {
+                                beginAtZero: true
+                            }
                         }
                     }
                 });

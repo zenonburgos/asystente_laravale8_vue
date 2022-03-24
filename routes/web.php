@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::group(['middleware'=>['auth']],function(){
 
     Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController');
+    //Notificaciones
+    Route::post('/notification/get', [NotificationController::class, 'get']);
     
     Route::get('/main', function () {
         return view('contenido/contenido');
