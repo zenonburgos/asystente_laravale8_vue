@@ -9,7 +9,11 @@
     <meta name="author" content="Incanatoit.com">
     <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
     <link rel="shortcut icon" href="img/favicon.png">
+    <!-- Id for Channel Notification -->   
+    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : ''}}">  
+
     <title>Sistema Ventas - IncanatoIT</title>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">

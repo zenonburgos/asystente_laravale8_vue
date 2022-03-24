@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 
+window.$ = window.jQuery = require('jquery');
+
 window.Vue = require('vue').default;
 
 /**
@@ -28,6 +30,8 @@ Vue.component('user', require('./components/User.vue').default);
 Vue.component('ingreso', require('./components/Ingreso.vue').default);
 Vue.component('venta', require('./components/Venta.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
+Vue.component('consultaingreso', require('./components/ConsultaIngreso.vue').default);
+Vue.component('consultaventa', require('./components/ConsultaVenta.vue').default);
 Vue.component('notification', require('./components/Notification.vue').default);
 
 /**
@@ -50,6 +54,12 @@ Vue.component('notification', require('./components/Notification.vue').default);
         }).catch(function(error) {
             console.log(error);
         });
+
+        var userId = $('meta[name="userId"]').attr('content');
+        
+        Echo.private('App.Models.User.' + userId).notification((notification) => {
+             me.notifications.unshift(notification); 
+        }); 
     }
 
 });
