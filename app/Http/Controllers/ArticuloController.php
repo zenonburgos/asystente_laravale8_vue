@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Articulo;
 
+use Barryvdh\DomPDF\Facade\Pdf;
+
 class ArticuloController extends Controller
 {
     public function index(Request $request)
@@ -99,6 +101,20 @@ class ArticuloController extends Controller
 
         return ['articulos' => $articulos];
     }
+
+    public function listarPdf(){
+        $articulos = Articulo::join('categories','articulos.idcategoria','=','categories.id')
+            ->select('articulos.id','articulos.idcategoria','articulos.codigo','articulos.nombre',
+            'categories.nombre as nombre_categoria','articulos.precio_venta','articulos.stock',
+            'articulos.descripcion','articulos.condicion')
+            ->orderBy('articulos.nombre', 'desc')->get();
+
+        $cont=Articulo::count();
+
+        $pdf = \PDF::loadView('pdf.articulospdf',['articulos'=>$articulos,'cont'=>$cont]);
+        return $pdf->stream('articulos.pdf'); //Para bajar: download en lugar de stream
+    }
+
 
     public function buscarArticulo(Request $request){
         if (!$request->ajax()) return redirect('/');
